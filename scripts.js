@@ -12,5 +12,12 @@ function togglePlay() {
     const method = video.paused ? 'play' : 'pause';
     video[method]();
   }
+
+function updateButton() {
+  console.log('Update the button');
+}
+
+
 /* Hook up event listeners */
 video.addEventListener('click', togglePlay);
+toggle.addEventListener('click', togglePlay);
