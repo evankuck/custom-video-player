@@ -9,15 +9,19 @@ const ranges = player.querySelectorAll('.player__slider');
 
 /* Build our Functions */
 function togglePlay() {
-    const method = video.paused ? 'play' : 'pause';
-    video[method]();
-  }
+  const method = video.paused ? 'play' : 'pause';
+  video[method]();
+}
 
 function updateButton() {
-  console.log('Update the button');
+  const icon = this.pause ? '►' : '❚ ❚';
+  toggle.textContent = icon;
 }
 
 
 /* Hook up event listeners */
 video.addEventListener('click', togglePlay);
+toggle.addEventListener('click', togglePlay);
+video.addEventListener('pause', updateButton);
+
 toggle.addEventListener('click', togglePlay);
